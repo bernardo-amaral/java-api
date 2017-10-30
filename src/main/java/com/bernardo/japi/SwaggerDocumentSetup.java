@@ -24,8 +24,8 @@ public class SwaggerDocumentSetup extends HttpServlet {
 		beanConfig.setDescription("Our core API's that can be used for all sorts of stuff. Please Enjoy.");
 		
 		beanConfig.setSchemes(new String[] {"http"});
-		beanConfig.setHost("localhost:8080");
-		beanConfig.setBasePath("/japi/services");
+		beanConfig.setHost("bernardo-java.herokuapp.com");
+		beanConfig.setBasePath("services");
 		//beanConfig.setResourcePackage("io.swagger.resources");
 		beanConfig.setResourcePackage("com.bernardo.japi.services");
 		
