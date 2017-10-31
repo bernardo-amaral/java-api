@@ -3,6 +3,7 @@ package com.bernardo.japi;
 import com.bernardo.japi.services.v1.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -14,6 +15,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 public class DataManager {
@@ -37,7 +39,8 @@ public class DataManager {
 
 	private DataManager() {
 		try {
-			MongoClient mongoClient = new MongoClient(new ServerAddress("ds241875.mlab.com", 41875));
+			MongoCredential credential = MongoCredential.createCredential("admin", "heroku_6q2kwfv2", "admin".toCharArray());
+			MongoClient mongoClient = new MongoClient(new ServerAddress("ds241875.mlab.com", 41875), Arrays.asList(credential));
 			japiDB = mongoClient.getDB("heroku_6q2kwfv2");
 			
 			userCollection = japiDB.getCollection("users");
