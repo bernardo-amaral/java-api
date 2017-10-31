@@ -37,8 +37,8 @@ public class DataManager {
 
 	private DataManager() {
 		try {
-			MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017));
-			japiDB = mongoClient.getDB("japi");
+			MongoClient mongoClient = new MongoClient(new ServerAddress("ds241875.mlab.com", 41875));
+			japiDB = mongoClient.getDB("heroku_6q2kwfv2");
 			
 			userCollection = japiDB.getCollection("users");
 		} catch (Exception e) {
