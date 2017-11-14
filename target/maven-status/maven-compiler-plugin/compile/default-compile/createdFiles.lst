@@ -1,6 +1,11 @@
 com\bernardo\japi\services\v1\UsersHolder.class
 com\bernardo\japi\services\v1\User.class
+com\bernardo\japi\services\v1\TokensHolder.class
 com\bernardo\japi\DataManager.class
 com\bernardo\japi\services\v1\UsersResource.class
+com\bernardo\japi\TokensDataManager.class
+com\bernardo\japi\TokensBusinessManager.class
 com\bernardo\japi\BusinessManager.class
+com\bernardo\japi\services\v1\TokensResource.class
 com\bernardo\japi\SwaggerDocumentSetup.class
+com\bernardo\japi\services\v1\Token.class
