@@ -45,8 +45,8 @@ public class BusinessManager {
 		return DataManager.getInstance().updateUserAttribute(userId, attribute, value);
 	}
 	
-	public void deleteUser(String userId) {
-		return;
+	public boolean deleteUser(String userId) {
+		return DataManager.getInstance().delete(userId);
 	}
 	
 }

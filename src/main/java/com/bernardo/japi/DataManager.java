@@ -37,6 +37,9 @@ public class DataManager {
 		return INSTANCE;
 	}
 
+	/**
+	 *
+	 */
 	private DataManager() {
 		try {
 			MongoCredential credential = MongoCredential.createCredential("admin", "heroku_6q2kwfv2", "admin".toCharArray());
@@ -49,6 +52,11 @@ public class DataManager {
 		}
 	}
 
+	/**
+	 *
+	 * @param user
+	 * @return
+	 */
 	public User insertUser(User user) {
 		
 		BasicDBObject doc = new BasicDBObject();
@@ -61,7 +69,12 @@ public class DataManager {
 		
 		return user;
 	}
-	
+
+	/**
+	 *
+	 * @param dbObject
+	 * @return
+	 */
 	public User mapUserFromDBObject(DBObject dbObject) {
 		
 		User user = new User();
@@ -72,7 +85,12 @@ public class DataManager {
 		
 		return user;
 	}
-	
+
+	/**
+	 *
+	 * @param userIdString
+	 * @return
+	 */
 	public User findUserById(String userIdString) {
 		
 		if (userIdString == null) {
@@ -95,7 +113,11 @@ public class DataManager {
 		
 		return null;
 	}
-	
+
+	/**
+	 *
+	 * @return
+	 */
 	public List<User> findAllUsers() {
 		
 		List<User> users = new ArrayList<User>();
@@ -124,7 +146,14 @@ public class DataManager {
 		
 		return null;
 	}
-	
+
+	/**
+	 *
+	 * @param userId
+	 * @param attribute
+	 * @param value
+	 * @return
+	 */
 	public User updateUserAttribute(String userId, String attribute, String value) {
 		
 		String updateValue = value;
@@ -139,5 +168,19 @@ public class DataManager {
 		
 		return findUserById(userId);
 	}
-	
+
+	/**
+	 *
+	 * @param userId
+	 * @return
+	 */
+    public boolean delete(String userId) {
+		try {
+			DBObject searchById = new BasicDBObject("_id", new ObjectId(userId));
+			userCollection.remove(searchById);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+    }
 }
