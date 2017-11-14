@@ -20,6 +20,9 @@ public class Token implements Serializable {
     @XmlElement(name = "name")
     private String name;
 
+    @XmlElement(name = "cardUid")
+    private String cardUid;
+
     @XmlElement(name = "active")
     private boolean active;
 
@@ -38,6 +41,14 @@ public class Token implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCardUid() {
+        return cardUid;
+    }
+
+    public void setCardUid(String cardUid) {
+        this.cardUid = cardUid;
     }
 
     public boolean isActive() {

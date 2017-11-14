@@ -97,15 +97,15 @@ public class TokensResource {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Create a new User",
-            notes = "This API creates a new user if the username does not exist" +
-                    "<p><u>Input Parameters</u><ul><li><b>new user object</b> is required</li></ul>")
+    @ApiOperation(value = "Create a new Token",
+            notes = "This API creates a new token if the uid does not exist" +
+                    "<p><u>Input Parameters</u><ul><li><b>new token object</b> is required</li></ul>")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success: { user: profile}"),
+            @ApiResponse(code = 200, message = "Success: { token: details}"),
             @ApiResponse(code = 400, message = "Failed: {\"error\": \"error description\", \"status\":\"FAIL\"}")
     })
     public Response createToken(
-            @ApiParam(value = "New Token", required = true, defaultValue = "\"{\"name\": \"Tom Jay\"}\"", allowableValues = "", allowMultiple = false)
+            @ApiParam(value = "New Token", required = true, defaultValue = "\"{\"name\": \"Garage Door\"}\"", allowableValues = "", allowMultiple = false)
                     Token token) {
 
         try {
@@ -117,7 +117,7 @@ public class TokensResource {
         }
 
         return Response.status(Response.Status.BAD_REQUEST)
-                .entity("{\"error\":\"Cold Not Create User\", \"status\":\"FAIL\"}")
+                .entity("{\"error\":\"Cold Not Create Token\", \"status\":\"FAIL\"}")
                 .build();
     }
 

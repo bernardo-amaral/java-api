@@ -62,6 +62,7 @@ public class TokensDataManager {
         BasicDBObject doc = new BasicDBObject();
 
         doc.put("name", token.getName());
+        doc.put("cardUid", token.getCardUid());
         doc.put("active", token.isActive());
 
         tokenCollection.insert(doc);
