@@ -53,6 +53,8 @@ public class PdfResource {
 
         }
 
+        //http://hmkcode.com/itext-html-to-pdf-using-java/
+
         return Response.status(Response.Status.BAD_REQUEST)
                 .entity("{\"error\":\"Cold Not Generate PDF\", \"status\":\"FAIL\"}")
                 .build();
