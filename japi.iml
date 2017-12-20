@@ -67,5 +67,7 @@
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:itextpdf:5.4.2" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf.tool:xmlworker:5.4.1" level="project" />
   </component>
 </module>
